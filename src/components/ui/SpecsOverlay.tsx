@@ -31,23 +31,23 @@ export function SpecsOverlay({
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -40 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed top-24 left-6 sm:left-8 z-30 pointer-events-none max-w-[330px] w-full"
+            className="fixed top-24 left-6 sm:left-8 z-30 pointer-events-none max-w-[340px] w-full"
           >
             <div className="pointer-events-auto">
               {!collapsed ? (
-                <div className="glass-panel rounded-3xl p-5 text-white shadow-2xl border border-white/15 relative overflow-hidden backdrop-blur-2xl">
+                <div className="relative w-full p-5 rounded-3xl backdrop-blur-2xl transition-all duration-500 bg-white/75 dark:bg-black/40 border border-white/80 dark:border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden">
                   {/* Subtle decorative glow */}
-                  <div className="absolute top-0 left-0 -ml-16 -mt-16 w-36 h-36 bg-blue-600/20 rounded-full blur-2xl pointer-events-none" />
+                  <div className="absolute top-0 left-0 -ml-16 -mt-16 w-36 h-36 bg-blue-600/15 dark:bg-blue-600/20 rounded-full blur-2xl pointer-events-none" />
 
                   {/* Header Badge */}
                   <div className="flex items-center justify-between mb-2.5">
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[9.5px] uppercase font-bold tracking-widest bg-blue-500/20 border border-blue-400/30 text-blue-300">
-                      <Sparkles className="w-3 h-3 text-cyan-400" />
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[9.5px] uppercase font-bold tracking-widest bg-blue-500/10 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 border border-blue-500/20">
+                      <Sparkles className="w-3 h-3 text-blue-500 dark:text-cyan-400" />
                       Thuần Điện Thông Minh
                     </span>
                     <button
                       onClick={() => setCollapsed(true)}
-                      className="text-[11px] text-zinc-400 hover:text-white transition-colors"
+                      className="text-[11px] text-neutral-400 dark:text-zinc-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
                       title="Thu gọn"
                     >
                       Thu gọn
@@ -55,49 +55,49 @@ export function SpecsOverlay({
                   </div>
 
                   {/* Car Title & Segment */}
-                  <h1 className="text-2xl sm:text-3xl font-black tracking-tight uppercase bg-clip-text text-transparent bg-gradient-to-r from-white via-zinc-100 to-zinc-400">
+                  <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-900 dark:text-white uppercase">
                     VinFast VF 6
                   </h1>
-                  <p className="text-[11px] font-medium text-zinc-400 tracking-wider uppercase mt-0.5">
+                  <p className="text-[11px] font-medium text-neutral-500 dark:text-zinc-400 tracking-wider uppercase mt-0.5">
                     C-SUV Cỡ Nhỏ Hiện Đại • Torino & Pininfarina
                   </p>
 
                   {/* Price Tag */}
-                  <div className="mt-3 pb-3 border-b border-white/10 flex items-baseline gap-2">
-                    <span className="text-[11px] text-zinc-400">Giá niêm yết từ:</span>
-                    <span className="text-lg sm:text-xl font-black text-cyan-400">
+                  <div className="mt-3 pb-3 border-b border-neutral-200/60 dark:border-white/10 flex items-baseline gap-2">
+                    <span className="text-[11px] text-neutral-500 dark:text-zinc-400">Giá niêm yết từ:</span>
+                    <span className="text-lg sm:text-xl font-bold text-blue-600 dark:text-cyan-400">
                       675.000.000
                     </span>
-                    <span className="text-[11px] text-zinc-300 font-semibold">VNĐ</span>
+                    <span className="text-[11px] text-neutral-600 dark:text-zinc-300 font-semibold">VNĐ</span>
                   </div>
 
                   {/* Primary Performance Spec Badges */}
                   <div className="grid grid-cols-3 gap-2 my-4">
                     {/* Range */}
-                    <div className="p-2.5 rounded-2xl bg-white/[0.04] border border-white/[0.08] hover:border-blue-500/40 transition-colors">
-                      <div className="flex items-center gap-1 text-blue-400 mb-1">
+                    <div className="p-2.5 rounded-2xl transition-all bg-neutral-100/80 dark:bg-neutral-900/60 border border-neutral-200/60 dark:border-white/5 hover:border-blue-500/40">
+                      <div className="flex items-center gap-1 text-blue-500 dark:text-blue-400 mb-1">
                         <BatteryCharging className="w-3.5 h-3.5" />
                       </div>
-                      <div className="text-base sm:text-lg font-bold tracking-tight text-white leading-none">399</div>
-                      <div className="text-[9.5px] text-zinc-400 leading-tight mt-1">km/lần sạc (WLTP)</div>
+                      <div className="text-base sm:text-lg font-bold tracking-tight text-neutral-900 dark:text-white leading-none">399</div>
+                      <div className="text-[9.5px] text-neutral-500 dark:text-zinc-400 leading-tight mt-1">km/lần sạc (WLTP)</div>
                     </div>
 
                     {/* Horsepower */}
-                    <div className="p-2.5 rounded-2xl bg-white/[0.04] border border-white/[0.08] hover:border-blue-500/40 transition-colors">
-                      <div className="flex items-center gap-1 text-cyan-400 mb-1">
+                    <div className="p-2.5 rounded-2xl transition-all bg-neutral-100/80 dark:bg-neutral-900/60 border border-neutral-200/60 dark:border-white/5 hover:border-blue-500/40">
+                      <div className="flex items-center gap-1 text-cyan-600 dark:text-cyan-400 mb-1">
                         <Zap className="w-3.5 h-3.5" />
                       </div>
-                      <div className="text-base sm:text-lg font-bold tracking-tight text-white leading-none">201</div>
-                      <div className="text-[9.5px] text-zinc-400 leading-tight mt-1">Mã lực (HP)</div>
+                      <div className="text-base sm:text-lg font-bold tracking-tight text-neutral-900 dark:text-white leading-none">201</div>
+                      <div className="text-[9.5px] text-neutral-500 dark:text-zinc-400 leading-tight mt-1">Mã lực (HP)</div>
                     </div>
 
                     {/* ADAS / Tech */}
-                    <div className="p-2.5 rounded-2xl bg-white/[0.04] border border-white/[0.08] hover:border-blue-500/40 transition-colors">
-                      <div className="flex items-center gap-1 text-indigo-400 mb-1">
+                    <div className="p-2.5 rounded-2xl transition-all bg-neutral-100/80 dark:bg-neutral-900/60 border border-neutral-200/60 dark:border-white/5 hover:border-blue-500/40">
+                      <div className="flex items-center gap-1 text-indigo-500 dark:text-indigo-400 mb-1">
                         <ShieldCheck className="w-3.5 h-3.5" />
                       </div>
-                      <div className="text-base sm:text-lg font-bold tracking-tight text-white leading-none">Level 2</div>
-                      <div className="text-[9.5px] text-zinc-400 leading-tight mt-1">Trợ lái ADAS</div>
+                      <div className="text-base sm:text-lg font-bold tracking-tight text-neutral-900 dark:text-white leading-none">Level 2</div>
+                      <div className="text-[9.5px] text-neutral-500 dark:text-zinc-400 leading-tight mt-1">Trợ lái ADAS</div>
                     </div>
                   </div>
 
@@ -105,14 +105,14 @@ export function SpecsOverlay({
                   <div className="flex items-center gap-2.5 pt-0.5">
                     <button
                       onClick={onOpenFullModal}
-                      className="flex-1 flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-white/10 hover:bg-white/20 text-[11px] font-semibold text-white transition-all border border-white/15 hover:border-cyan-400/50"
+                      className="flex-1 flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-neutral-100/80 dark:bg-white/10 hover:bg-neutral-200/80 dark:hover:bg-white/20 text-[11px] font-semibold text-neutral-800 dark:text-white transition-all border border-neutral-200 dark:border-white/15 hover:border-blue-500/40"
                     >
                       <span>Toàn bộ thông số</span>
-                      <ChevronRight className="w-3.5 h-3.5 text-cyan-400" />
+                      <ChevronRight className="w-3.5 h-3.5 text-blue-500 dark:text-cyan-400" />
                     </button>
                     <button
                       onClick={onOpenTestDrive}
-                      className="py-2 px-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-[11px] font-semibold text-white shadow-lg glow-blue transition-all"
+                      className="py-2 px-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-[11px] font-semibold text-white shadow-lg shadow-blue-500/20 transition-all"
                     >
                       Lái thử
                     </button>
@@ -122,9 +122,9 @@ export function SpecsOverlay({
                 /* Collapsed floating trigger */
                 <button
                   onClick={() => setCollapsed(false)}
-                  className="glass-panel px-4 py-2 rounded-full text-xs font-semibold text-white flex items-center gap-2 hover:bg-white/15 transition-all border border-white/20"
+                  className="px-4 py-2 rounded-full text-xs font-semibold backdrop-blur-2xl transition-all bg-white/75 dark:bg-neutral-900/80 border border-white/80 dark:border-white/10 text-neutral-800 dark:text-white flex items-center gap-2 shadow-lg"
                 >
-                  <Sparkles className="w-4 h-4 text-blue-400" />
+                  <Sparkles className="w-4 h-4 text-blue-500 dark:text-blue-400" />
                   <span>VinFast VF6 • Thông số xe</span>
                 </button>
               )}

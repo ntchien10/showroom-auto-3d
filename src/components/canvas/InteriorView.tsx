@@ -77,9 +77,9 @@ export function InteriorView({ isOpen }: InteriorViewProps) {
         filter: isOpen ? 'blur(0px)' : 'blur(12px)',
       }}
       transition={{
-        duration: isOpen ? 0.85 : 0.85,
-        delay: isOpen ? 0.75 : 0, // Vào nội thất: đợi camera lướt tới cửa lái mới mở ảnh
-        ease: [0.25, 0.1, 0.25, 1], // Đường cong cubic-bezier mượt mà, triệt tiêu độ giật
+        duration: isOpen ? 0.75 : 0.55,
+        delay: isOpen ? 1.15 : 0, // Vào nội thất: đợi camera lướt 1.15s (khoảng 80% chặng đường) mới fade in êm ái
+        ease: [0.25, 0.1, 0.25, 1],
       }}
       style={{
         pointerEvents: isOpen ? 'auto' : 'none',
